@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/><meta http-equiv="Content-Language" content="ru"/><meta name="keywords" content=""/><meta name="description" content=""/><meta http-equiv="robots" content="ALL"/><meta http-equiv="Cache-Control" content="no-cashe"/><base href="http://kpi.com.ua/"/><link rel="icon" href="images/favicon.ico" type="image/x-icon"/><link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/><link rel="stylesheet" type="text/css" media="screen" href="images/style.css"/><link rel="stylesheet" type="text/css" media="print" href="images/print.css"/><link rel="stylesheet" href="/cms/js/dtree/dtree.css" type="text/css"/><script type="text/javascript" src="/cms/js/dtree/dtree.js"> </script><script type="text/javascript" src="/cms/js/common.js"> </script><script type="text/javascript" src="/cms/js/ajax.js"> </script><script type="text/javascript" src="/cms/js/gzip.js"> </script><script type="text/javascript" src="/js/common.js"> </script><script type="text/javascript" src="/js/CalendarPopup.js"> </script><script type="text/javascript" src="/js/jquery-1.3.2.min.js"> </script><script type="text/javascript" src="/js/jquery.autocomplete.js"> </script><title>Мануал Груп: Компьютеры и комплектующие, ноутбуки и КПК </title><link rel="stylesheet" type="text/css" href="/ext11b1/resources/css/basic-dialog.css"/><script type="text/javascript" src="/ext11b1/adapter/ext/ext-base.js"> </script><script type="text/javascript" src="/ext11b1/ext-all.js"> </script><SCRIPT LANGUAGE="JavaScript">document.write(getCalendarStyles());</SCRIPT></head><script type="text/javascript" language="Javascript">
+  var myLoaded = false;
+ </script><body background="/sneg.gif"><script type="text/javascript">
+//   var d_error = ;
+//   var a_error = ;
+   
+   var d_error = false;
+   var a_error = false;
+   Ext.onReady(function() {
+      if (d_error) {
+        Ext.MessageBox.alert('Предупреждение', 'У Вас не заполненные поля Юридическогоили Физического адреса, ПРОСИМ ВАС ВВЕСТИ ДАННЫЕ В НАСТРОЙКАХ УЧЁТНОЙ ЗАПИСИ, В ПОЛЯ ФИЗИЧЕСКИЙ И ЮРИДИЧЕСКИЙ АДРЕС. Из-за отсутствия данных в указаных полях ВЫ НЕ СМОЖЕТЕ РЕЗЕРВИРОВАТЬ ТОВАР С САЙТА');
+      }
+   });
+
+   function fold(el)
+   {
+      var block = el.parentNode.parentNode;
+      var main = document.getElementById('main');
+      var separator = document.getElementById('separator');
+      var left = document.getElementById('left');
+      var mlogin = document.getElementById('login');
+      var isInSep = getIsInSep(el);
+      saveInUserSettings(el.alt, isInSep == true);
+      block.style.height = !isInSep ? "25px" : "";
+      block.style.overflow = !isInSep ? "hidden" : "";	
+      el.src = "/images/fold-" + (!isInSep ? "in" : "out") + ".gif";
+      el.onclick = function () { fold(el); };	
+      //------------------------------------
+      var parent = (isInSep == false) ? separator : left;
+      parent.appendChild(block);
+      parent.style.height = (!isInSep) ? "23px" : "";
+      //------------------------------------
+      var blocks = left.getElementsByTagName('div');
+      main.style.paddingLeft = (blocks.length == 0) ? "0px" : "280px";
+      //------------------------------------
+      var blocks = separator.getElementsByTagName('div');
+      if (blocks.length == 0) {
+        separator.style.height = "2px";
+      }
+   }  
+   function doDropDown(el) {
+      el.style.position = 'absolute';
+   }
+
+   function saveInUserSettings(alt, direction) {
+      makeAjax('client/load.ajax.php?action=menu&el=' + alt + '&direction=' + direction, 0);
+   }
+
+   function setFold(el) {
+      return function () {
+        fold(el);
+      }
+   }
+
+   function getIsInSep(el) {
+      return el.parentNode.parentNode.parentNode.id == "separator";
+   }
+
+   function myToggle(el)
+   {
+      $("#" + el).toggle();
+      $("#v1_" + el).toggle();
+      $("#v2_" + el).toggle();
+      $.ajax( { url: "savestate.php", type: "GET", data: ({block:el}), dataType: "html" });
+   }
+
+   window.onload = function () {
+     myLoaded = true;
+     window.status ='ok';
+   }
+  </script><div id="wrapper"><h1 id="top-overall" style="color:#FFF;"><a href="" title="Версия для печати" style="float:right; width:16px; height:16px; display:block; background:url('images/for_print.gif') no-repeat"> </a>
+     KПИ-Cервис: Компьютеры и комплектующие, ноутбуки и КПК
+     </h1><div id="top-right"><a href="index.php"><img style="float:left" src="upload/shapko.jpg" border="0"/></a></div><table width="100%"><tr><td><div id="login" style="float:left; width:276px;background:#a1ccfb;"><div class="title">Авторизация</div><form action="login.php" method="post" id="log_in_form"><input type="hidden" name="flag" value="1"/><input type="hidden" name="freturn_url" value="http://kpi.com.ua/"/><br/><table style=""><tr><th valign="middle">Логин:</th><td><input type="text" class="text" name="fusername" id="login" style="height:19px; border:1px solid #767575;"/></td><td>&nbsp;</td></tr><tr><th valign="middle">Пароль:</th><td><input type="password" class="text" name="fpassword" id="pwd" style="height:19px; border:1px solid #767575;"/></td><td><input type="submit" class="button" onclick="document.getElementById('log_in_form').submit()" value="Войти"/></td></tr><tr><th>&nbsp;</th><td colspan="2"><input type="checkbox" name="store" id="store" value="1" title="Нажатие на кнопку 'Запомнить пароль' не поможет ВАМ запомнить пароль."/><b>запомнить</b></td></tr><tr><td>&nbsp;</td><td colspan="2"><ul><li><a href="registration.html">регистрация</a></li><li><a href="lost.html">забыл пароль</a></li></ul></td></tr></table><br/></form></div><div id="left"><script type="text/javascript">
+   function openCat(cat_id) 
+   {
+      var div = document.getElementById('cat' + cat_id);
+      div.style.display = div.style.display == 'none' ? 'block' : 'none';
+   }
+  </script><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="1"/>
+     Категории
+    </div><div><center><a href="#" onclick="return SwitchMenu(1)">
+	  Переключить меню в режим по брендам
+	  </a></center></div><div style="padding-left:15px; margin-right:-15px;"><div class="dtree"><script type="text/javascript"><!--
+       	d = new dTree('d', 'cms/js/dtree/img/');
+       	d.add(0,-1,'<b>Выберите категорию:</b>', '', '', '', 'images/sep.gif', 'images/sep.gif');
+        d.add(1001, 0, 'Ноутбуки и КПК                                                                                                                                                                                          ');d.add(284, 1001, "Ноутбуки", 'category/tabled/284/');d.add(352, 1001, "Системи GPS", 'category/tabled/352/');d.add(353, 1001, "Електронні Книжки, Аксесуари", 'category/tabled/353/');d.add(354, 1001, "Аксесуари до КПК та Елект...", 'category/tabled/354/');d.add(355, 1001, "Аксесуари для ноутбуків", 'category/tabled/355/');d.add(361, 1001, "Планшети, аксесуари для п...", 'category/tabled/361/');d.add(1002, 0, 'Компьютеры                                                                                                                                                                                              ');d.add(96, 1002, "Комп'ютери", 'category/tabled/96/');d.add(1003, 0, 'Компьютерная периферия                                                                                                                                                                                  ');d.add(57, 1003, "Монітори", 'category/tabled/57/');d.add(58, 1003, "Клавіатури", 'category/tabled/58/');d.add(59, 1003, "Мишки, килимки", 'category/tabled/59/');d.add(60, 1003, "Ігрові маніпулятори, план...", 'category/tabled/60/');d.add(61, 1003, "Принтери, БФП, копіри, ск...", 'category/tabled/61/');d.add(62, 1003, "ДБЖ, Фільтри", 'category/tabled/62/');d.add(63, 1003, "Сканери", 'category/tabled/63/');d.add(64, 1003, "Кабельна продукція та ада...", 'category/tabled/64/');d.add(347, 1003, "Товари для геймерів", 'category/tabled/347/');d.add(1004, 0, 'Комплектующие для ПК                                                                                                                                                                                    ');d.add(46, 1004, "CPU AMD & Intel", 'category/tabled/46/');d.add(47, 1004, "Материнські плати", 'category/tabled/47/');d.add(48, 1004, "Модулі пам'яті", 'category/tabled/48/');d.add(49, 1004, "Відеокарти", 'category/tabled/49/');d.add(51, 1004, "CD-ROM. RW & DVD приводи", 'category/tabled/51/');d.add(52, 1004, "FDD", 'category/tabled/52/');d.add(53, 1004, "Контролери та кардрідери", 'category/tabled/53/');d.add(54, 1004, "Корпуси та блоки живлення", 'category/tabled/54/');d.add(55, 1004, "Кишені для HDD", 'category/tabled/55/');d.add(90, 1004, "HDD, SSD Накопичувачі", 'category/tabled/90/');d.add(91, 1004, "Охолоджувачі", 'category/tabled/91/');d.add(1005, 0, 'Средства мультимедиа                                                                                                                                                                                    ');d.add(66, 1005, "Навушники & Мікрофони", 'category/tabled/66/');d.add(67, 1005, "Колонки", 'category/tabled/67/');d.add(68, 1005, "Мультимедіа", 'category/tabled/68/');d.add(295, 1005, "Проектори, Електронні дош...", 'category/tabled/295/');d.add(356, 1005, "Екрани", 'category/tabled/356/');d.add(360, 1005, "Кріплення", 'category/tabled/360/');d.add(1006, 0, 'Фото-, и видеотехника                                                                                                                                                                                   ');d.add(296, 1006, "Фотокамери", 'category/tabled/296/');d.add(298, 1006, "Відеокамери", 'category/tabled/298/');d.add(299, 1006, "Об'єктиви та фільтри", 'category/tabled/299/');d.add(301, 1006, "Цифрові фоторамки", 'category/tabled/301/');d.add(302, 1006, "Аксесуари до фото-відеоте...", 'category/tabled/302/');d.add(1007, 0, 'Сети и телекоммуникации                                                                                                                                                                                 ');d.add(76, 1007, "Модеми та xDSL-обладнання", 'category/tabled/76/');d.add(309, 1007, "Активне обладнання", 'category/tabled/309/');d.add(310, 1007, "Пасивне обладнання", 'category/tabled/310/');d.add(311, 1007, "Інструмент", 'category/tabled/311/');d.add(358, 1007, "IP/VoIP пристрої", 'category/tabled/358/');d.add(1008, 0, 'Серверное оборудование                                                                                                                                                                                  ');d.add(303, 1008, "RAID-контролери SATA/SAS/...", 'category/tabled/303/');d.add(304, 1008, "Серверне обладнання Chenbro", 'category/tabled/304/');d.add(305, 1008, "Серверне обладнання Dell", 'category/tabled/305/');d.add(306, 1008, "Серверне обладнання HP", 'category/tabled/306/');d.add(307, 1008, "Серверне обладнання Intel", 'category/tabled/307/');d.add(308, 1008, "Серверне обладнання Super...", 'category/tabled/308/');d.add(359, 1008, "Серверне обладнання Asus", 'category/tabled/359/');d.add(1009, 0, 'Телефония                                                                                                                                                                                               ');d.add(73, 1009, "Мобільні телефони,GPS", 'category/tabled/73/');d.add(74, 1009, "Телефонія", 'category/tabled/74/');d.add(10010, 0, 'Бытовая техника                                                                                                                                                                                         ');d.add(204, 10010, "LCD та LED телевізори", 'category/tabled/204/');d.add(205, 10010, "Кріплення", 'category/tabled/205/');d.add(206, 10010, "Плазмові панелі", 'category/tabled/206/');d.add(212, 10010, "Домашні кінотеатри та Муз...", 'category/tabled/212/');d.add(213, 10010, "Велика Побутова Техніка", 'category/tabled/213/');d.add(214, 10010, "Дрібна Побутова Техніка", 'category/tabled/214/');d.add(281, 10010, "LED телевізори", 'category/tabled/281/');d.add(10011, 0, 'Расходные материалы                                                                                                                                                                                     ');d.add(224, 10011, "Папір", 'category/tabled/224/');d.add(225, 10011, "Запчастини", 'category/tabled/225/');d.add(226, 10011, "Картриджі лазерні", 'category/tabled/226/');d.add(227, 10011, "Картриджі матричні", 'category/tabled/227/');d.add(228, 10011, "Картриджі струменеві", 'category/tabled/228/');d.add(229, 10011, "Картриджі сублімаційні", 'category/tabled/229/');d.add(230, 10011, "Стрічки до матричних прин...", 'category/tabled/230/');d.add(231, 10011, "Витратні матеріали до факсів", 'category/tabled/231/');d.add(232, 10011, "Системи безперервної пода...", 'category/tabled/232/');d.add(233, 10011, "Сумісні лазерні картриджі", 'category/tabled/233/');d.add(234, 10011, "Сумісні струменеві картриджі", 'category/tabled/234/');d.add(235, 10011, "Сумісні перезаправні карт...", 'category/tabled/235/');d.add(236, 10011, "Сумісні тонери", 'category/tabled/236/');d.add(237, 10011, "Тонери, девелопери", 'category/tabled/237/');d.add(238, 10011, "Чорнила та заправки", 'category/tabled/238/');d.add(10012, 0, 'Разное                                                                                                                                                                                                  ');d.add(88, 10012, "Разное", 'category/tabled/88/');d.add(89, 10012, "Аксесуари", 'category/tabled/89/');d.add(94, 10012, "Оптичні диски та дискети", 'category/tabled/94/');d.add(10013, 0, 'Программное обеспечение                                                                                                                                                                                 ');d.add(81, 10013, "OEM (для передвстановленн...", 'category/tabled/81/');d.add(203, 10013, "ВОХ (Коробкові версії)", 'category/tabled/203/');d.add(10014, 0, 'Климатическое оборудование                                                                                                                                                                              ');d.add(209, 10014, "Кондиціонери", 'category/tabled/209/');d.add(210, 10014, "Монтажні матеріали", 'category/tabled/210/');d.add(211, 10014, "Зволожувачі і Очисники по...", 'category/tabled/211/');d.add(239, 10014, "Водонагрівачі", 'category/tabled/239/');d.add(240, 10014, "Обігрівачі і Вентилятори", 'category/tabled/240/');d.add(10015, 0, 'ТОВАРЫ Б/У                                                                                                                                                                                              ');d.add(244, 10015, "CD-ROM. RW & DVD приводи", 'category/tabled/244/');d.add(245, 10015, "FDD", 'category/tabled/245/');d.add(246, 10015, "Аксесуари", 'category/tabled/246/');d.add(247, 10015, "Побутова техніка", 'category/tabled/247/');d.add(248, 10015, "Відеокарти", 'category/tabled/248/');d.add(249, 10015, "HDD, SSD Накопичувачі", 'category/tabled/249/');d.add(250, 10015, "Ігрові маніпулятори, план...", 'category/tabled/250/');d.add(251, 10015, "ДБЖ, Фільтра", 'category/tabled/251/');d.add(252, 10015, "Кишені для HDD", 'category/tabled/252/');d.add(253, 10015, "Клавіатури", 'category/tabled/253/');d.add(254, 10015, "Колонки", 'category/tabled/254/');d.add(255, 10015, "Оптичні диски та дискети", 'category/tabled/255/');d.add(256, 10015, "Комп'ютери", 'category/tabled/256/');d.add(257, 10015, "Контролери та кардрідери", 'category/tabled/257/');d.add(258, 10015, "Корпуси та блоки живлення", 'category/tabled/258/');d.add(259, 10015, "Охолоджувачі", 'category/tabled/259/');d.add(260, 10015, "Материнські плати", 'category/tabled/260/');d.add(261, 10015, "Мобільні телефони,GPS", 'category/tabled/261/');d.add(262, 10015, "Модеми", 'category/tabled/262/');d.add(263, 10015, "Модулі пам'яті", 'category/tabled/263/');d.add(264, 10015, "Монітори", 'category/tabled/264/');d.add(265, 10015, "Мультимедіа", 'category/tabled/265/');d.add(266, 10015, "Мишки, килимки", 'category/tabled/266/');d.add(267, 10015, "Навушники & Мікрофони", 'category/tabled/267/');d.add(268, 10015, "Ноутбуки, КПК, Електронні...", 'category/tabled/268/');d.add(269, 10015, "Переходники & кабельная п...", 'category/tabled/269/');d.add(270, 10015, "Подарки", 'category/tabled/270/');d.add(271, 10015, "Принтери & копіри", 'category/tabled/271/');d.add(272, 10015, "Процесори", 'category/tabled/272/');d.add(273, 10015, "Разное", 'category/tabled/273/');d.add(274, 10015, "Расходные материалы", 'category/tabled/274/');d.add(275, 10015, "Серверне обладнання", 'category/tabled/275/');d.add(276, 10015, "Мережеве обладнання", 'category/tabled/276/');d.add(277, 10015, "Сканери", 'category/tabled/277/');d.add(278, 10015, "Телефонія", 'category/tabled/278/');d.add(279, 10015, "Фото-відеотехніка", 'category/tabled/279/');d.add(280, 10015, "Товары Б/У", 'category/tabled/280/');d.add(10016, 0, 'Офисное оборудование                                                                                                                                                                                    ');d.add(289, 10016, "Брошурувальники", 'category/tabled/289/');d.add(290, 10016, "Конверторні ламінатори", 'category/tabled/290/');d.add(291, 10016, "Витратні матеріали до бро...", 'category/tabled/291/');d.add(292, 10016, "Витратні матеріали до лам...", 'category/tabled/292/');d.add(293, 10016, "Різаки", 'category/tabled/293/');d.add(294, 10016, "Знищувачи документів", 'category/tabled/294/');d.add(10017, 0, 'Отопительное оборудование                                                                                                                                                                               ');d.add(332, 10017, "Бойлери", 'category/tabled/332/');d.add(333, 10017, "Газові колонки", 'category/tabled/333/');d.add(334, 10017, "Конденсационные котлы", 'category/tabled/334/');d.add(335, 10017, "Підлогові котли", 'category/tabled/335/');d.add(336, 10017, "Настінні котли", 'category/tabled/336/');d.add(10018, 0, 'LED-лампи                                                                                                                                                                                               ');d.add(363, 10018, "LED-лампи", 'category/tabled/363/'); 
+       document.write(d);
+       d.closeAll();
+       d.config.useCookies = false;
+       d.openTo( 0, true);//--></script></div><br/></div></div><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="2"/><a href="#" onclick="myToggle('togextra1'); return false">Прайсы и выгрузки</a><span id="v1_togextra1" style="visibility:visible; float:right" align="right"><a href="#" onclick="myToggle('togextra1'); return false" title="Свернуть"><img src="/images/strelka1.png" border="0" alt="Свернуть" title="Свернуть"/></a></span><span id="v2_togextra1" style="display:none; float:right" align="right"><a href="#" onclick="myToggle('togextra1'); return false" title="Развернуть"><img src="/images/strelka2.png" border="0" alt="Развернуть"/></a></span></div><div id="togextra1" style="visibility:visible"><ul class="list">
+
+<li>Оптовый прайс
+	<ul>
+		<li><a href="./upload/price1.xls">прайс в формате Excel</a></li>
+                <li><a href="./upload/PRICE1.ZIP">прайс в формате ZIP</a></li>
+                <li><a href="./upload/price1.rar">прайс в формате RAR</a></li>
+		
+	</ul>
+</li>
+<br>
+<li>Прайс товаров Б/У
+	<ul>
+		<li><a href="./upload/price2.xls">прайс в формате Excel</a></li>
+                <li><a href="./upload/PRICE2.ZIP">прайс в формате ZIP</a></li>
+                <li><a href="./upload/price2.rar">прайс в формате RAR</a></li>
+	</ul>
+</li>
+
+<br>
+
+<li>Выгрузки всей номенклатуры
+	<ul>
+		<li><a href="./upload/nomenklatura_s_opisaniem.rar" title="Выгрузка все номенклатуры с описанием и ценами, обновляется каждое воскресенье">Товар с описанием и ценами</a></li>
+		<li><a href="./upload/nomenklatura.rar" title="Выгрузка все номенклатуры с ценами, обновляется каждое утро">Товар с ценами</a></li>
+		
+	</ul>
+</li>
+
+<br>
+
+<li>Для разработчиков (API)
+	<ul>
+		<li><a href="http://project.tehsovet.ua/aim">Автоматизированный сайт(АИМ)</a></li>
+                <li><a href="http://project.tehsovet.ua/interaktivnaya-rabota">Интерактивная работа с БД Мануал Груп</a></li>
+                <li><a href="http://project.tehsovet.ua/1c-portal">Пример реализации интерактива (1С портал)</a></li>
+	</ul>
+</li>
+
+
+</ul>   </div><br/></div><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="2"/><a href="#" onclick="myToggle('togextra2'); return false">Реклама</a><span id="v1_togextra2" style="visibility:visible; float:right" align="right"><a href="#" onclick="myToggle('togextra2'); return false" title="Свернуть"><img src="/images/strelka1.png" border="0" alt="Свернуть" title="Свернуть"/></a></span><span id="v2_togextra2" style="display:none; float:right" align="right"><a href="#" onclick="myToggle('togextra2'); return false" title="Развернуть"><img src="/images/strelka2.png" border="0" alt="Развернуть"/></a></span></div><div id="togextra2" style="visibility:visible"><noindex>
+<!--
+<div align="center">
+<a href="upload/acme_action.pdf" align="center">
+<img src="upload/acme.jpg" alt=""></a><br></div>
+
+
+<br> 
+
+<p class="center">
+<embed src="upload/seagate_240x350.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="350">
+</embed>
+</object>			    
+</p> 
+
+<br> 
+-->
+<br> 
+
+<p class="center">
+<embed src="upload/KPI_TEGRA_240x350.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="350">
+</embed>
+</object>			    
+</p> 
+
+<br> 
+
+<br> 
+
+<p class="center">
+<embed src="upload/Q1_ultrabook_CN12RUDS-033_240x400.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="400">
+</embed>
+</object>			    
+</p> 
+
+<br> 
+
+
+<p class="center">
+<embed src="upload/amd_trinity_mainstream_240x400_Flash.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="400">
+</embed>
+</object>			    
+</p> 
+
+<br> 
+
+
+<!--
+
+<p class="center">
+<embed src="upload/VS_Car_CN11RUDS-026_240x400.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="400">
+</embed>
+</object>			    
+</p> 
+<br> 
+
+
+<div align="center">
+<a href="http://www.teamgroup.com.ua/action/vezuchaya-fleshka.html" align="center">
+<img src="upload/Lucky_flash.gif" alt=""></a><br></div>
+
+
+<br> 
+
+<div align="center">
+<a href="http://kpi.com.ua/move.php?letter_a=А&search=Wacom" align="center">
+<img src="upload/Wacom_240x350.gif" alt=""></a><br></div>
+
+
+
+<br> 
+<p class="center">
+<embed src="upload/amd_redeon.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="240" height="200">
+</embed>
+</object>			    
+</p> 
+-->
+
+</noindex>                                                          </div><br/></div><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="2"/><a href="#" onclick="myToggle('togextra11'); return false">Администрация</a><span id="v1_togextra11" style="visibility:visible; float:right" align="right"><a href="#" onclick="myToggle('togextra11'); return false" title="Свернуть"><img src="/images/strelka1.png" border="0" alt="Свернуть" title="Свернуть"/></a></span><span id="v2_togextra11" style="display:none; float:right" align="right"><a href="#" onclick="myToggle('togextra11'); return false" title="Развернуть"><img src="/images/strelka2.png" border="0" alt="Развернуть"/></a></span></div><div id="togextra11" style="visibility:visible"><ul class="list">
+				   <li>Координатор проекта:
+					<ul>
+					<ul>
+						<font color="#FF0000">(не консультант)</font>
+
+					</ul>
+						<li>
+							<img alt="*" src="http://wwp.icq.com/scripts/online.dll?icq=56711652&img=5" height="18" width="18" /> 
+							<noindex><a href="http://www.icq.com/whitepages/cmd.php?uin=56711652&action=message" title="ICQ">56711652 <i>(Андрей)</i></a></noindex>
+
+
+
+						</li>
+					</ul>
+				</li>
+  </ul></div><br/></div><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="2"/><a href="#" onclick="myToggle('togextra5'); return false">Наши проекты</a><span id="v1_togextra5" style="visibility:visible; float:right" align="right"><a href="#" onclick="myToggle('togextra5'); return false" title="Свернуть"><img src="/images/strelka1.png" border="0" alt="Свернуть" title="Свернуть"/></a></span><span id="v2_togextra5" style="display:none; float:right" align="right"><a href="#" onclick="myToggle('togextra5'); return false" title="Развернуть"><img src="/images/strelka2.png" border="0" alt="Развернуть"/></a></span></div><div id="togextra5" style="visibility:visible"><noindex>
+<ul class="list">
+<li><noindex><a href="http://cs.kpi.com.ua/">Игровой сервер Counter-Strike V1.6</a></noindex></li>
+<li><noindex><a href="http://cam.kpi.com.ua/">WEB-камеры Киева</a></noindex></li>
+<li>Интернет радио
+
+<ul>
+<li><b><noindex><a href="/upload/kpi-play128.m3u">128 кбит/сек</a></noindex></b></li>
+<li><noindex><a href="/upload/kpi-play64.m3u">64 кбит/сек</a></noindex></li>
+
+</ul>
+</li>
+
+</ul>
+<br/> 
+
+</noindex></div><br/></div><div class="block"><div class="title"><img src="images/sep.gif" class="isFold" alt="2"/><a href="#" onclick="myToggle('togextra6'); return false">Статистика</a><span id="v1_togextra6" style="visibility:visible; float:right" align="right"><a href="#" onclick="myToggle('togextra6'); return false" title="Свернуть"><img src="/images/strelka1.png" border="0" alt="Свернуть" title="Свернуть"/></a></span><span id="v2_togextra6" style="display:none; float:right" align="right"><a href="#" onclick="myToggle('togextra6'); return false" title="Развернуть"><img src="/images/strelka2.png" border="0" alt="Развернуть"/></a></span></div><div id="togextra6" style="visibility:visible"><noindex>
+<center>
+<div class="counter"><!--LiveInternet counter-->
+                        <script type="text/javascript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t18.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+';'+Math.random()+
+'" alt="" title="LiveInternet: ???????? ????? ?????????? ?? 24 ????, ??????????? ?? 24 ???? ? ?? ???????" '+
+'border=0 width=88 height=31></a>')//--></script>
+
+                        <!--/LiveInternet--></div> 
+
+
+<div class="counter"><noindex><a href="http://www.hotprice.com.ua" target="_blank"><img src="http://www.hotprice.com.ua/images/site2/hotprice_button.gif" border="0" /></a></noindex></div> 
+
+<div class="counter"><!-- bigmir)net TOP 100 -->
+<noindex>
+<a href="http://www.bigmir.net/" target=_blank onClick='img = new Image();img.src="http://www.bigmir.net/?cl=127265";' >
+<script language="javascript">
+<!--
+bmQ='<img src=http://c.bigmir.net/?s127265&t5'
+bmD=document
+bmD.cookie="b=b"
+if(bmD.cookie)bmQ+='&c1'
+//-->
+</script>
+<script language="javascript1.2">
+<!-- 
+bmS=screen;bmQ+='&d'+(bmS.colorDepth?bmS.colorDepth:bmS.pixelDepth)+"&r"+bmS.width;
+//-->
+</script>
+<script language="javascript">
+<!--
+bmF = bmD.referrer.slice(7);
+((bmI=bmF.indexOf('/'))!=-1)?(bmF=bmF.substring(0,bmI)):(bmI=bmF.length);
+if(bmF!=window.location.href.substring(7,7+bmI))bmQ+='&f'+escape(bmD.referrer);
+bmD.write(bmQ+" border=0 width=88 height=31 alt='bigmir TOP100'>");
+//-->
+</script>
+</a></noindex></div> 
+</center>
+</noindex></div><br/></div></div></td><td width="280" style="padding-left:10px"><div class="iright1"><ul id="menu"><li><a href="#" target="_self" onclick="return false;" style="text-decoration:none">Интерактив </a><ul><li><a href="/categories.php" target="_self">Каталог товаров </a></li><li><noindex><a href="action.html" target="_self">Акции </a></noindex></li><li><noindex><a href="action_opt.html" target="_self">Акции для оптовых клиентов </a></noindex></li><li><a href="http://project.kpi.com.ua" target="_blank">НАШИ ПРОЕКТЫ/УСЛУГИ </a></li><li><noindex><a href="1c-prtal.html" target="_self">1C портал </a></noindex></li><li><noindex><a href="news.html" target="_self">Новости </a></noindex></li><li><noindex><a href="vacancy.html" target="_self">Вакансии </a></noindex></li></ul></li><li><a href="#" target="_self" onclick="return false;" style="text-decoration:none">Правила работы </a><ul><li><noindex><a href="registration.html" target="_self">Регистрация </a></noindex></li><li><a href="faq.html" target="_self">Часто задаваемые вопросы </a></li></ul></li><li><a href="#" target="_self" onclick="return false;" style="text-decoration:none">О компании </a><ul><li><noindex><a href="kontakti.html" target="_self">* КОНТАКТЫ </a></noindex></li><li><noindex><a href="http://upload.kpi.com.ua/" target="_blank">Сертификаты </a></noindex></li><li><noindex><a href="partner_status.html" target="_self">Партнерские статусы </a></noindex></li><li><noindex><a href="http://grand.ua" target="_blank">Розничные продажи </a></noindex></li><li><noindex><a href="documents.html" target="_self">Документы для клиентов </a></noindex></li></ul></li></ul><form action="search/tabled/" method="POST" id="s_form"><div id="searchb_drew"><script type="text/javascript">
+$(document).ready(function(){
+  // --- Автозаполнение2 ---
+  $("#search").autocomplete("autocomplete.php", {
+    delay:1000,
+    minChars:3,
+    matchSubset:0,
+    autoFill:false,
+    matchContains:0,
+    cacheLength:200,
+    selectFirst:false,
+    formatItem:liFormat,
+    maxItemsToShow:20,
+    width:500,
+    onItemSelect:selectItem
+  }); 
+  // --- Автозаполнение2 ---
+});
+</script><script>
+
+
+        // alert(testDrew);
+        function wolf_explain()
+        {                  
+          var id1 = 'search_descr'; 
+          var st = document.getElementById(id1).style.visibility;
+          if ( st != '')
+          {
+             document.getElementById(id1).style.visibility = "";
+          }
+          else 
+          {
+             document.getElementById(id1).style.visibility = "hidden";            
+          } 
+        }
+       </script><script>
+        var testDrew =5 ;
+      </script><div style="float:left; width:700px;          color: #0021FF;    padding:5px;     padding-left:10px;     margin-left:0px;     margin-top:0px;     margin-right:0px;    border:0px solid #77a2ff;">       </div><div class="drew_search"><div style="float:left"><input type="text" size="60" name="search" id="search" value="" style="float:left; width:600px" class="minput"/></div><div style="float:right"><input type="submit" class="button" onclick="document.getElementById('s_form').submit()" style="float:left;" value="Найти"/><a href="/search_info.html">?</a></div></div><div id="search_descr" style="visibility:hidden; display:none">
+         Поиск находит вхождения всех слов (или фраз взятых в
+         кавычки) длиннее 1 символа. 
+         Выводятся вхождения, чем длиннее слово присутствующее 
+         в названии тем выше в результатах поиска будет товар.
+        </div></div><input type="hidden" name="new_search" value="1"/></form></div><div id="separator"><script>
+      function setdiv()
+      {
+         if (!testDrew)
+         {
+           testDrew = 1;
+         }
+         // alert (testDrew);
+         document.getElementById('separator').style.height = '' + testDrew +'px';
+      }
+      setdiv();
+     </script> </div><div style="margin-left:0px"><div id="main"><div><div class="title">Каталог товаров </div></div><div class="separator-half"> </div><hr/><style type="text/css">
+   #panel {
+     margin:10px;
+   }
+   #panel A {
+     padding-right:10px;
+   }
+  </style><style type="text/css">
+ .inner_menu * {
+    color:#000000;
+    font-family:Arial;
+ }
+
+ .inner_menu .tile {
+    font-weight:bold;
+    font-size:13px;
+ }
+
+ .inner_menu LI {
+    display:inline;
+    margin-right:10px;
+ }
+
+ .inner_menu {
+    float:left;
+    width:40%;
+    margin-left:40px;
+    margin-bottom:20px;
+ }
+
+ .inner_menu UL {
+    margin:0;
+    padding:0;
+ }
+
+ .inner_menu A:hover {
+    color:#999999;
+ }
+</style><div class="advert"><b>Энергосберегающие лампы Grand </b><br/> <br>
+<img src="upload/Led1.jpg">  </div><div class="advert"><b>Розничное подразделение Мануал Груп </b><br/><br>
+<table border=0 sellpadding="50" cellspacing="50">
+ <tr>
+  <td width=140 valign=top>
+
+               <div style="margin:5px 5px 5px 0px;">
+               <img src="http://grand.ua/img2/8effb08b.png" alt="Grand.ua" border=0 style="border-color: #DFF0F9">
+               </div>
+
+  </td>
+  <td valign=top>
+              <font color="#054CB4" font size="2">
+              <div style="margin:5px 5px 5px 15px; ">
+              Вы находитесь на оптовом портале компании Мануал Груп.
+             <br>
+             Для покупки в розницу используйте наше розничное подразделение , интернет-магазин <a href="http://grand.ua">
+                       <font color="#378C6B"><b>GRAND.UA</b></font></a>      
+             </div>
+            </font>  
+
+
+  </td>
+ </tr>
+
+ <tr>
+  <td colspan=2>
+   
+
+
+  </td>
+ </tr>
+</table>
+                         </div><div class="advert"><b>Арендуемые интернет-магазины </b><br/><table border=0 sellpadding="0" cellspacing="0" >
+ <tr>
+  <td width=140 valign=top>
+
+               <div style="margin:5px 5px 5px 0px;">
+               <img src="http://project.tehsovet.ua/img/kontent.jpg" alt="Grand.ua" border=0 style="border-color: #DFF0F9">
+               </div>
+
+  </td>
+  <td valign=top>
+  <div style="margin:5px 5px 5px 15px; ">
+
+<font color="#000000" font size="2">
+<b>
+</b>
+<font color="#054CB4" font size="2">
+Арендуемый интернет-магазин (далее АИМ) представляет из себя полноценный интернет магазин , который имеет самые актуальные данные по наличию товара в Мануал Груп, его автоматическому резервированию в разрезе Вашего эккаунта при заказе Вашего конечного клиента.
+<br>
+<br>
+АИМ имеет неограниченные возможности индивидуальных надстроек и доработок по конкретные нужды Вашей компании.
+</font>
+
+  </div>
+  </td>
+ </tr>
+
+ <tr>
+  <td colspan=2>
+   
+<a href="http://project.tehsovet.ua/aim" target="_blank">ДЕТАЛЬНЕЕ</a>
+<br>
+<a href="http://project.tehsovet.ua/kak-podklyuchitsya" target="_blank">ДЕТАЛЬНО ПО ПОДКЛЮЧЕНИЮ</a>
+<br>
+
+
+  </td>
+ </tr>
+</table>
+       </div><div class="advert"><b>Пополнение счетов мобильных операторов с баланса </b><br/><br>
+
+
+<table border=0 sellpadding="50" cellspacing="50">
+ <tr>
+  <td width=140 valign=top>
+
+               <div style="margin:5px 5px 5px 0px;">
+               <img src="http://project.tehsovet.ua/img/popolnenie3.png" alt="Grand.ua" border=0 style="border-color: #DFF0F9">
+               </div>
+
+  </td>
+  <td valign=top>
+
+              <div style="margin:5px 5px 5px 15px; ">
+
+
+
+<font color="#054CB4" font size="2">
+Открыта возможность пополнять мобильные телефоны с баланса.<br>
+Для пополнения счета номера обратитесь к своему менеджеру.<br>
+</font>
+
+
+
+
+             </div>
+
+
+
+  </td>
+ </tr>
+
+ <tr>
+  <td colspan=2>
+   
+
+
+  </td>
+ </tr>
+</table>
+                      
+
+
+<br>    </div><div style="padding-top:10px; float:left"><ul><div class="inner_menu"><div class="tile" style="color:#3983c2">Ноутбуки и КПК                                                                                                                                                                                          </div><ul><li><a href="category/tabled/284/">Ноутбуки</a></li><li><a href="category/tabled/352/">Системи GPS</a></li><li><a href="category/tabled/353/">Електронні Книжки, Аксесуари</a></li><li><a href="category/tabled/354/">Аксесуари до КПК та Електронних Книжок</a></li><li><a href="category/tabled/355/">Аксесуари для ноутбуків</a></li><li><a href="category/tabled/361/">Планшети, аксесуари для планшетів</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Компьютеры                                                                                                                                                                                              </div><ul><li><a href="category/tabled/96/">Комп'ютери</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Компьютерная периферия                                                                                                                                                                                  </div><ul><li><a href="category/tabled/57/">Монітори</a></li><li><a href="category/tabled/58/">Клавіатури</a></li><li><a href="category/tabled/59/">Мишки, килимки</a></li><li><a href="category/tabled/60/">Ігрові маніпулятори, планшети</a></li><li><a href="category/tabled/61/">Принтери, БФП, копіри, сканери</a></li><li><a href="category/tabled/62/">ДБЖ, Фільтри</a></li><li><a href="category/tabled/63/">Сканери</a></li><li><a href="category/tabled/64/">Кабельна продукція та адаптери</a></li><li><a href="category/tabled/347/">Товари для геймерів</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Комплектующие для ПК                                                                                                                                                                                    </div><ul><li><a href="category/tabled/46/">CPU AMD & Intel</a></li><li><a href="category/tabled/47/">Материнські плати</a></li><li><a href="category/tabled/48/">Модулі пам'яті</a></li><li><a href="category/tabled/49/">Відеокарти</a></li><li><a href="category/tabled/51/">CD-ROM. RW & DVD приводи</a></li><li><a href="category/tabled/52/">FDD</a></li><li><a href="category/tabled/53/">Контролери та кардрідери</a></li><li><a href="category/tabled/54/">Корпуси та блоки живлення</a></li><li><a href="category/tabled/55/">Кишені для HDD</a></li><li><a href="category/tabled/90/">HDD, SSD Накопичувачі</a></li><li><a href="category/tabled/91/">Охолоджувачі</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Средства мультимедиа                                                                                                                                                                                    </div><ul><li><a href="category/tabled/66/">Навушники & Мікрофони</a></li><li><a href="category/tabled/67/">Колонки</a></li><li><a href="category/tabled/68/">Мультимедіа</a></li><li><a href="category/tabled/295/">Проектори, Електронні дошки, екрани, кріплення</a></li><li><a href="category/tabled/356/">Екрани</a></li><li><a href="category/tabled/360/">Кріплення</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Фото-, и видеотехника                                                                                                                                                                                   </div><ul><li><a href="category/tabled/296/">Фотокамери</a></li><li><a href="category/tabled/298/">Відеокамери</a></li><li><a href="category/tabled/299/">Об'єктиви та фільтри</a></li><li><a href="category/tabled/301/">Цифрові фоторамки</a></li><li><a href="category/tabled/302/">Аксесуари до фото-відеотехніки</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Сети и телекоммуникации                                                                                                                                                                                 </div><ul><li><a href="category/tabled/76/">Модеми та xDSL-обладнання</a></li><li><a href="category/tabled/309/">Активне обладнання</a></li><li><a href="category/tabled/310/">Пасивне обладнання</a></li><li><a href="category/tabled/311/">Інструмент</a></li><li><a href="category/tabled/358/">IP/VoIP пристрої</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Серверное оборудование                                                                                                                                                                                  </div><ul><li><a href="category/tabled/303/">RAID-контролери SATA/SAS/SCSI/FC</a></li><li><a href="category/tabled/304/">Серверне обладнання Chenbro</a></li><li><a href="category/tabled/305/">Серверне обладнання Dell</a></li><li><a href="category/tabled/306/">Серверне обладнання HP</a></li><li><a href="category/tabled/307/">Серверне обладнання Intel</a></li><li><a href="category/tabled/308/">Серверне обладнання Supermicro</a></li><li><a href="category/tabled/359/">Серверне обладнання Asus</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Телефония                                                                                                                                                                                               </div><ul><li><a href="category/tabled/73/">Мобільні телефони,GPS</a></li><li><a href="category/tabled/74/">Телефонія</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Бытовая техника                                                                                                                                                                                         </div><ul><li><a href="category/tabled/204/">LCD та LED телевізори</a></li><li><a href="category/tabled/205/">Кріплення</a></li><li><a href="category/tabled/206/">Плазмові панелі</a></li><li><a href="category/tabled/212/">Домашні кінотеатри та Музичні центри</a></li><li><a href="category/tabled/213/">Велика Побутова Техніка</a></li><li><a href="category/tabled/214/">Дрібна Побутова Техніка</a></li><li><a href="category/tabled/281/">LED телевізори</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Расходные материалы                                                                                                                                                                                     </div><ul><li><a href="category/tabled/224/">Папір</a></li><li><a href="category/tabled/225/">Запчастини</a></li><li><a href="category/tabled/226/">Картриджі лазерні</a></li><li><a href="category/tabled/227/">Картриджі матричні</a></li><li><a href="category/tabled/228/">Картриджі струменеві</a></li><li><a href="category/tabled/229/">Картриджі сублімаційні</a></li><li><a href="category/tabled/230/">Стрічки до матричних принтерів</a></li><li><a href="category/tabled/231/">Витратні матеріали до факсів</a></li><li><a href="category/tabled/232/">Системи безперервної подачі чорнил СБПЧ</a></li><li><a href="category/tabled/233/">Сумісні лазерні картриджі</a></li><li><a href="category/tabled/234/">Сумісні струменеві картриджі</a></li><li><a href="category/tabled/235/">Сумісні перезаправні картріджі ПЗК</a></li><li><a href="category/tabled/236/">Сумісні тонери</a></li><li><a href="category/tabled/237/">Тонери, девелопери</a></li><li><a href="category/tabled/238/">Чорнила та заправки</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Разное                                                                                                                                                                                                  </div><ul><li><a href="category/tabled/88/">Разное</a></li><li><a href="category/tabled/89/">Аксесуари</a></li><li><a href="category/tabled/94/">Оптичні диски та дискети</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Программное обеспечение                                                                                                                                                                                 </div><ul><li><a href="category/tabled/81/">OEM (для передвстановлення на нові комп'ютери)</a></li><li><a href="category/tabled/203/">ВОХ (Коробкові версії)</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Климатическое оборудование                                                                                                                                                                              </div><ul><li><a href="category/tabled/209/">Кондиціонери</a></li><li><a href="category/tabled/210/">Монтажні матеріали</a></li><li><a href="category/tabled/211/">Зволожувачі і Очисники повітря</a></li><li><a href="category/tabled/239/">Водонагрівачі</a></li><li><a href="category/tabled/240/">Обігрівачі і Вентилятори</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">ТОВАРЫ Б/У                                                                                                                                                                                              </div><ul><li><a href="category/tabled/244/">CD-ROM. RW & DVD приводи</a></li><li><a href="category/tabled/245/">FDD</a></li><li><a href="category/tabled/246/">Аксесуари</a></li><li><a href="category/tabled/247/">Побутова техніка</a></li><li><a href="category/tabled/248/">Відеокарти</a></li><li><a href="category/tabled/249/">HDD, SSD Накопичувачі</a></li><li><a href="category/tabled/250/">Ігрові маніпулятори, планшети</a></li><li><a href="category/tabled/251/">ДБЖ, Фільтра</a></li><li><a href="category/tabled/252/">Кишені для HDD</a></li><li><a href="category/tabled/253/">Клавіатури</a></li><li><a href="category/tabled/254/">Колонки</a></li><li><a href="category/tabled/255/">Оптичні диски та дискети</a></li><li><a href="category/tabled/256/">Комп'ютери</a></li><li><a href="category/tabled/257/">Контролери та кардрідери</a></li><li><a href="category/tabled/258/">Корпуси та блоки живлення</a></li><li><a href="category/tabled/259/">Охолоджувачі</a></li><li><a href="category/tabled/260/">Материнські плати</a></li><li><a href="category/tabled/261/">Мобільні телефони,GPS</a></li><li><a href="category/tabled/262/">Модеми</a></li><li><a href="category/tabled/263/">Модулі пам'яті</a></li><li><a href="category/tabled/264/">Монітори</a></li><li><a href="category/tabled/265/">Мультимедіа</a></li><li><a href="category/tabled/266/">Мишки, килимки</a></li><li><a href="category/tabled/267/">Навушники & Мікрофони</a></li><li><a href="category/tabled/268/">Ноутбуки, КПК, Електронні Книжки</a></li><li><a href="category/tabled/269/">Переходники & кабельная продукция</a></li><li><a href="category/tabled/270/">Подарки</a></li><li><a href="category/tabled/271/">Принтери & копіри</a></li><li><a href="category/tabled/272/">Процесори</a></li><li><a href="category/tabled/273/">Разное</a></li><li><a href="category/tabled/274/">Расходные материалы</a></li><li><a href="category/tabled/275/">Серверне обладнання</a></li><li><a href="category/tabled/276/">Мережеве обладнання</a></li><li><a href="category/tabled/277/">Сканери</a></li><li><a href="category/tabled/278/">Телефонія</a></li><li><a href="category/tabled/279/">Фото-відеотехніка</a></li><li><a href="category/tabled/280/">Товары Б/У</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Офисное оборудование                                                                                                                                                                                    </div><ul><li><a href="category/tabled/289/">Брошурувальники</a></li><li><a href="category/tabled/290/">Конверторні ламінатори</a></li><li><a href="category/tabled/291/">Витратні матеріали до брошурувальників</a></li><li><a href="category/tabled/292/">Витратні матеріали до ламінаторів</a></li><li><a href="category/tabled/293/">Різаки</a></li><li><a href="category/tabled/294/">Знищувачи документів</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">Отопительное оборудование                                                                                                                                                                               </div><ul><li><a href="category/tabled/332/">Бойлери</a></li><li><a href="category/tabled/333/">Газові колонки</a></li><li><a href="category/tabled/334/">Конденсационные котлы</a></li><li><a href="category/tabled/335/">Підлогові котли</a></li><li><a href="category/tabled/336/">Настінні котли</a></li></ul></div><div class="inner_menu"><div class="tile" style="color:#3983c2">LED-лампи                                                                                                                                                                                               </div><ul><li><a href="category/tabled/363/">LED-лампи</a></li></ul></div></ul></div></div><div class="hint"><b>
+- Если у меня в резервах напротив товара светится значок, что товар не доступен или весь в резерве, что это значит ?<br>
+- Когда товар стоит - весь зарезервирован и у меня вроде есть в резерве - это он точно у меня в резерве??, когда мне не досталось - то подсвечивает синеньким ?<br>
+</b>
+Значок на против товара обозначает текущее состояние товара для заказов (с учётом как Вашего так и остальных резервов в очереди).<br>
+Информация о доступности высвечивается в колонке "Доступность"<br>
+Если доступное количество меньше чем количество указанное в резерве - то строка подсвечивается синим.<br>
+Колонка "Доступность" гарантирует Вам получение указанного в ней количества товара.</div></div><div style="clear:both"> </div></td></tr></table></div><div id="bottom-underall">
+   df: 
+    770.860
+   ; 
+   запросов: 
+   21
+   шт.; 
+ Время запросов:
+   0.018
+   сек.; 
+ip: 
+   31.43.139.196
+   ; gzip: <span id="gzip">выключен</span>; 
+   генерация страницы: 0.022 сек.; 
+   текущее время: 23:42:09</div><div style="height:30px;"> </div><script>gzipHolder();</script><script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script><script type="text/javascript">
+    _uacct = "UA-999941-1";
+    urchinTracker();
+   </script><DIV ID="testdiv1" STYLE="position:absolute;visibility:hidden;background-color:white;layer-background-color:white;width:200px"> </DIV></body></html>

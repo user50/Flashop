@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories>
+
+    <category name="Флешки" categoryUrl= "http://kpi.com.ua/category/tabled/48/55655" url="http://kpi.com.ua/category/tabled/48/55655//">
+        <manufacturer>Transcend</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>GooDRAM</manufacturer>
+        <manufacturer>CORSAIR</manufacturer>
+        <manufacturer>Toshiba</manufacturer>
+        <manufacturer>Team</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Pretec</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+    </category>
+
+    <category name="Flash-карты" categoryUrl="http://kpi.com.ua/category/tabled/48/5996" url="http://kpi.com.ua/category/tabled/48/5996//">
+    <manufacturer>Transcend</manufacturer>
+    <manufacturer>Kingston</manufacturer>
+    <manufacturer>GooDRAM</manufacturer>
+    <manufacturer>Team</manufacturer>
+    <manufacturer>Toshiba</manufacturer>
+    <manufacturer>Pretec</manufacturer>
+</category>
+
+    <category name="Сумки для ноутбуков" categoryUrl="http://kpi.com.ua/category/tabled/355/91398" url="http://kpi.com.ua/category/tabled/355/91398//">
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Continent</manufacturer>
+        <manufacturer>Defender</manufacturer>
+        <manufacturer>Dicota</manufacturer>
+        <manufacturer>G-Cube</manufacturer>
+        <manufacturer>Golla</manufacturer>
+        <manufacturer>HP</manufacturer>
+        <manufacturer>Lex</manufacturer>
+        <manufacturer>LogicFox</manufacturer>
+        <manufacturer>Porto</manufacturer>
+        <manufacturer>Riva</manufacturer>
+        <manufacturer>Sumdex</manufacturer>
+        <manufacturer>Targus</manufacturer>
+        <manufacturer>Tucano</manufacturer>
+    </category>
+
+    <category name="Клавиатуры"  categoryUrl="http://kpi.com.ua/category/tabled/58/" url="http://kpi.com.ua/category/tabled/58/0//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>GigaByte</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Codegen</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+    </category>
+
+    <category name="Комплекты" url="http://kpi.com.ua/category/tabled/58/0//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>GigaByte</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+    </category>
+
+    <category name="Мышки" categoryUrl="http://kpi.com.ua/category/tabled/59/" url="http://kpi.com.ua/category/tabled/59/56348//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+    </category>
+
+    <category name="Наушники" categoryUrl="http://kpi.com.ua/category/tabled/66/" url="http://kpi.com.ua/category/tabled/66/0//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Gemix</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Koss</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+        <manufacturer>Panasonic</manufacturer>
+        <manufacturer>Plantronics</manufacturer>
+        <manufacturer>Sennheiser</manufacturer>
+    </category>
+
+    <category name="Гарнитура" url="http://kpi.com.ua/category/tabled/66/0//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Gemix</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Koss</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+        <manufacturer>Panasonic</manufacturer>
+        <manufacturer>Plantronics</manufacturer>
+        <manufacturer>Sennheiser</manufacturer>
+    </category>
+
+    <category name="Микрофоны" url="http://kpi.com.ua/category/tabled/66/0//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Gemix</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Koss</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+        <manufacturer>Panasonic</manufacturer>
+        <manufacturer>Plantronics</manufacturer>
+        <manufacturer>Sennheiser</manufacturer>
+    </category>
+
+    <category name="Web-камеры" categoryUrl="http://kpi.com.ua/category/tabled/68/16398" url="http://kpi.com.ua/category/tabled/68/16398//">
+        <manufacturer>A4Tech</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Gemix</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+    </category>
+
+    <category name="Колонки" categoryUrl="http://kpi.com.ua/category/tabled/67/" url="http://kpi.com.ua/category/tabled/67/0//">
+        <manufacturer>4U</manufacturer>
+        <manufacturer>ACME</manufacturer>
+        <manufacturer>Canyon</manufacturer>
+        <manufacturer>Edifier</manufacturer>
+        <!--<manufacturer>F&amp;D</manufacturer>-->
+        <manufacturer>Gemix</manufacturer>
+        <manufacturer>Genius</manufacturer>
+        <manufacturer>GMB</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>Logitech</manufacturer>
+        <manufacturer>MICROLAB</manufacturer>
+    </category>
+    <category name="Электронные книги" categoryUrl="http://kpi.com.ua/category/tabled/353/10024" url="http://kpi.com.ua/category/tabled/353/10024">
+        <manufacturer>Enot</manufacturer>
+        <manufacturer>Evromedia</manufacturer>
+        <manufacturer>Impression</manufacturer>
+        <manufacturer>Prestigio</manufacturer>
+        <manufacturer>QUMO</manufacturer>
+        <manufacturer>PocketBook</manufacturer>
+    </category>
+    <category name="Оперативная память" categoryUrl="http://kpi.com.ua/category/tabled/48/846" url="http://kpi.com.ua/category/tabled/48/846//">
+        <manufacturer>GEIL</manufacturer>
+        <manufacturer>GooDRAM</manufacturer>
+        <manufacturer>Hynix</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>takeMS</manufacturer>
+        <manufacturer>Team</manufacturer>
+    </category>
+    <category name="Оперативная память" categoryUrl="http://kpi.com.ua/category/tabled/48/11469" url="http://kpi.com.ua/category/tabled/48/11469//">
+        <manufacturer>GooDRAM</manufacturer>
+        <manufacturer>Hynix</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>Team</manufacturer>
+        <manufacturer>Transcend</manufacturer>
+        <manufacturer>Exceleram</manufacturer>
+        <manufacturer>NCP</manufacturer>
+    </category>
+    <category name="Оперативная память" categoryUrl="http://kpi.com.ua/category/tabled/48/91174" url="http://kpi.com.ua/category/tabled/48/91174//">
+        <manufacturer>AMD</manufacturer>
+        <manufacturer>CORSAIR</manufacturer>
+        <manufacturer>Crucial</manufacturer>
+        <manufacturer>Exceleram</manufacturer>
+        <manufacturer>G.Skill</manufacturer>
+        <manufacturer>GEIL</manufacturer>
+        <manufacturer>GooDRAM</manufacturer>
+        <manufacturer>Hynix</manufacturer>
+        <manufacturer>Kingmax</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Micron</manufacturer>
+        <manufacturer>Mustang</manufacturer>
+        <manufacturer>NCP</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+        <manufacturer>TwinMos</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>Team</manufacturer>
+        <manufacturer>Transcend</manufacturer>
+    </category>
+    <category name="Оперативная память" categoryUrl="http://kpi.com.ua/category/tabled/48/11835" url="http://kpi.com.ua/category/tabled/48/11835//">
+        <manufacturer>CORSAIR</manufacturer>
+        <manufacturer>Crucial</manufacturer>
+        <manufacturer>Dell</manufacturer>
+        <manufacturer>Exceleram</manufacturer>
+        <manufacturer>G.Skill</manufacturer>
+        <manufacturer>GEIL</manufacturer>
+        <manufacturer>GooDRAM</manufacturer>
+        <manufacturer>Hynix</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Micron</manufacturer>
+        <manufacturer>Mustang</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+        <manufacturer>TwinMos</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>Team</manufacturer>
+        <manufacturer>Transcend</manufacturer>
+    </category>
+    <category name="Оперативная память" categoryUrl="http://kpi.com.ua/category/tabled/48/11836" url="http://kpi.com.ua/category/tabled/48/11836//">
+        <manufacturer>Crucial</manufacturer>
+        <manufacturer>Hynix</manufacturer>
+        <manufacturer>Micron</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+    </category>
+    <category name="Видеокарты" categoryUrl="http://kpi.com.ua/category/tabled/49/54648" url="http://kpi.com.ua/category/tabled/49/54648//">
+        <manufacturer>Asus</manufacturer>
+        <manufacturer>GigaByte</manufacturer>
+        <manufacturer>HIS</manufacturer>
+        <manufacturer>MSI</manufacturer>
+        <manufacturer>PowerColor</manufacturer>
+        <manufacturer>XFX</manufacturer>
+    </category>
+    <category name="Видеокарты" categoryUrl="http://kpi.com.ua/category/tabled/49/92001" url="http://kpi.com.ua/category/tabled/49/92001//">
+        <manufacturer>Asus</manufacturer>
+        <manufacturer>Gainward</manufacturer>
+        <manufacturer>GigaByte</manufacturer>
+        <manufacturer>Inno3D</manufacturer>
+        <manufacturer>Leadtek</manufacturer>
+        <manufacturer>MSI</manufacturer>
+        <manufacturer>Palit</manufacturer>
+    </category>
+    <category name="Видеокарты" categoryUrl="http://kpi.com.ua/category/tabled/49/77010" url="http://kpi.com.ua/category/tabled/49/77010//">
+        <manufacturer>Dell</manufacturer>
+        <manufacturer>HP</manufacturer>
+        <manufacturer>PNY</manufacturer>
+    </category>
+    <category name="Процессоры" categoryUrl="http://kpi.com.ua/category/tabled/46" url="http://kpi.com.ua/category/tabled/46/0//">
+        <manufacturer>Intel __CPR__</manufacturer>
+        <manufacturer>AMD</manufacturer>
+    </category>
+    <category name="SDD накопители" categoryUrl="http://kpi.com.ua/category/tabled/90" url="http://kpi.com.ua/category/tabled/90/0//">
+        <manufacturer>3Q</manufacturer>
+        <manufacturer>A-Data</manufacturer>
+        <manufacturer>BUFFALO</manufacturer>
+        <manufacturer>CORSAIR</manufacturer>
+        <manufacturer>Hitachi</manufacturer>
+        <manufacturer>Intel __CPR__</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Micron</manufacturer>
+        <manufacturer>OCZ</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+        <manufacturer>Plextor</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>Seagate</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Toshiba</manufacturer>
+        <manufacturer>Transcend</manufacturer>
+        <manufacturer>Verbatim</manufacturer>
+        <manufacturer>WD</manufacturer>
+    </category>
+    <category name="HDD накопители" url="http://kpi.com.ua/category/tabled/90/0//">
+        <manufacturer>3Q</manufacturer>
+        <manufacturer>A-Data</manufacturer>
+        <manufacturer>BUFFALO</manufacturer>
+        <manufacturer>CORSAIR</manufacturer>
+        <manufacturer>Hitachi</manufacturer>
+        <manufacturer>Intel __CPR__</manufacturer>
+        <manufacturer>Kingston</manufacturer>
+        <manufacturer>Micron</manufacturer>
+        <manufacturer>OCZ</manufacturer>
+        <manufacturer>Patriot</manufacturer>
+        <manufacturer>Plextor</manufacturer>
+        <manufacturer>Samsung</manufacturer>
+        <manufacturer>Seagate</manufacturer>
+        <manufacturer>Silicon Power</manufacturer>
+        <manufacturer>Toshiba</manufacturer>
+        <manufacturer>Transcend</manufacturer>
+        <manufacturer>Verbatim</manufacturer>
+        <manufacturer>WD</manufacturer>
+    </category>
+    <category name="Материнские платы" categoryUrl="http://kpi.com.ua/category/tabled/47/" url="http://kpi.com.ua/category/tabled/47/0//">
+        <manufacturer>Asrock</manufacturer>
+        <manufacturer>Asus</manufacturer>
+        <manufacturer>BioStar</manufacturer>
+        <manufacturer>GigaByte</manufacturer>
+        <manufacturer>Intel __CPR__</manufacturer>
+        <manufacturer>MSI</manufacturer>
+    </category>
+    <category name="Корпуса" categoryUrl="http://kpi.com.ua/category/tabled/54/11" url="http://kpi.com.ua/category/tabled/54/11//">
+        <manufacturer>Asus</manufacturer>
+        <manufacturer>Chieftec</manufacturer>
+        <manufacturer>Codegen</manufacturer>
+        <manufacturer>CoolerMaster</manufacturer>
+        <manufacturer>Delux</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>LinkWord</manufacturer>
+        <manufacturer>LogicPower</manufacturer>
+        <manufacturer>OKtet</manufacturer>
+    </category>
+    <category name="Блоки питания" categoryUrl="http://kpi.com.ua/category/tabled/54/55656" url="http://kpi.com.ua/category/tabled/54/55656//">
+        <manufacturer>Chieftec</manufacturer>
+        <manufacturer>FSP</manufacturer>
+        <manufacturer>GMB</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>Maxxtro</manufacturer>
+        <manufacturer>OCZ</manufacturer>
+    </category>
+    <category name="Кулеры" url="http://kpi.com.ua/category/tabled/91/0//">
+        <manufacturer>Akasa</manufacturer>
+        <manufacturer>ARCTIC COOLING</manufacturer>
+        <manufacturer>CoolerMaster</manufacturer>
+        <manufacturer>Deepcool</manufacturer>
+        <manufacturer>GMB</manufacturer>
+        <manufacturer>Grand</manufacturer>
+        <manufacturer>Maxtron</manufacturer>
+        <manufacturer>Nexus</manufacturer>
+        <manufacturer>Noctua</manufacturer>
+        <manufacturer>Noiseblocker</manufacturer>
+        <manufacturer>SCYTHE</manufacturer>
+        <manufacturer>Spire</manufacturer>
+        <manufacturer>Titan</manufacturer>
+        <manufacturer>Xilence</manufacturer>
+        <manufacturer>Zalman</manufacturer>
+    </category>
+
+</categories>

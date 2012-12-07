@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="db_site:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/db_site_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="db_site/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>
